@@ -16,26 +16,70 @@
             <li>Message Us</li>
         </ul>
     </nav>
-    <div class="container">
-        <header style="background-image: url('assets/header.png');">
+    <header style="background-image: url(assets/header.jpg);">
+        <!-- <img src="assets/header.png" alt="header.png"> -->
+        <div class="header-text">
             <h1>Hi Dimas, Welcome to Our Website!</h1>
             <p>Please enjoy!</p>
-            <!-- <img src="assets/header.png" alt="header.png"> -->
-        </header>
-        <div class="facilitations">
-            <div>
-                <div class="circle" style="background-image: url('assets/header.png');"></div>
-                <h4>Football Arena</h4>
+        </div>
+    </header>
+    <div>
+        <img class="img-slideshow" src="assets/content1.jpg" alt="">
+        <img class="img-slideshow" src="assets/content2.jpg" alt="">
+        <img class="img-slideshow" src="assets/content3.jpg" alt="">
+        <button onclick="plusDivs(-1)">Previous</button>
+        <button onclick="plusDivs(1)">Next</button>
+    </div>
+    <main>
+        <div class="container">
+        <h1>Our Facilitations</h1>
+            <div class="facilitations">
+                <div>
+                    <div class="circle" style="background-image: url('assets/content1.jpg');"></div>
+                    <h4>Professional Teacher</h4>
+                </div>
+                <div>
+                    <div class="circle" style="background-image: url('assets/content2.jpg');"></div>
+                    <h4>Sport Field</h4>
+                </div>
+                <div>
+                    <div class="circle" style="background-image: url('assets/content3.jpg');"></div>
+                    <h4>Classroom</h4>
+                </div>
             </div>
-            <div>
-                <div class="circle"></div>
-                <h4>Football Arena</h4>
-            </div>
-            <div>
-                <div class="circle"></div>
-                <h4>Football Arena</h4>
+            <hr>
+            <div class="content">
+                <div>
+                    <h2>Form</h2>
+                </div>
+                <div>
+                    <h2>Table</h2>
+                    <table class="table_person">
+                        <thead>
+                            <tr>
+                                <th>Nama</th>
+                                <th>Tanggal Lahir</th>
+                                <th>Jenis Kelamin</th>
+                                <th>Pesan</th>
+                                <th>Profile</th>
+                                <th>Hapus</th>
+                            </tr>
+                        </thead>
+                            <tr>
+                                <td>Nama</td>
+                                <td>Tanggal Lahir</td>
+                                <td>Jenis Kelamin</td>
+                                <td>Pesan</td>
+                                <td><a href="#">Klik</a></td>
+                                <td>Gambar</td>
+                            </tr>
+                        <tbody>
+        
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 </body>
 </html>
