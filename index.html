@@ -1,85 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>My School</title>
 </head>
+
 <body>
     <nav>
-        <img src="" alt="logo.jpg" class="logo">
+        <a href="#"><img class="logo" src="assets/logo_revou_trans.png" alt="logo.png"></a>
         <ul class="nav-items">
-            <li>Home</li>
-            <li>Our Profile</li>
-            <li>Achievments</li>
-            <li>Message Us</li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Our Profile</a></li>
+            <li><a href="#">Achievments</a></li>
+            <li><a href="#message-us">Message Us</a></li>
         </ul>
     </nav>
-    <header style="background-image: url(assets/header.jpg);">
-        <!-- <img src="assets/header.png" alt="header.png"> -->
+    <header style="background-image: url(assets/school.jpg);">
         <div class="header-text">
-            <h1>Hi Dimas, Welcome to Our Website!</h1>
+            <h1>Hi <span id="guest-nama">Guest</span>, Welcome to Our Website!</h1>
             <p>Please enjoy!</p>
         </div>
     </header>
-    <div>
-        <img class="img-slideshow" src="assets/content1.jpg" alt="">
-        <img class="img-slideshow" src="assets/content2.jpg" alt="">
-        <img class="img-slideshow" src="assets/content3.jpg" alt="">
-        <button onclick="plusDivs(-1)">Previous</button>
-        <button onclick="plusDivs(1)">Next</button>
-    </div>
     <main>
         <div class="container">
-        <h1>Our Facilitations</h1>
-            <div class="facilitations">
-                <div>
-                    <div class="circle" style="background-image: url('assets/content1.jpg');"></div>
-                    <h4>Professional Teacher</h4>
-                </div>
-                <div>
-                    <div class="circle" style="background-image: url('assets/content2.jpg');"></div>
-                    <h4>Sport Field</h4>
-                </div>
-                <div>
-                    <div class="circle" style="background-image: url('assets/content3.jpg');"></div>
-                    <h4>Classroom</h4>
-                </div>
-            </div>
-            <hr>
-            <div class="content">
-                <div>
-                    <h2>Form</h2>
-                </div>
-                <div>
-                    <h2>Table</h2>
-                    <table class="table_person">
-                        <thead>
-                            <tr>
-                                <th>Nama</th>
-                                <th>Tanggal Lahir</th>
-                                <th>Jenis Kelamin</th>
-                                <th>Pesan</th>
-                                <th>Profile</th>
-                                <th>Hapus</th>
-                            </tr>
-                        </thead>
-                            <tr>
-                                <td>Nama</td>
-                                <td>Tanggal Lahir</td>
-                                <td>Jenis Kelamin</td>
-                                <td>Pesan</td>
-                                <td><a href="#">Klik</a></td>
-                                <td>Gambar</td>
-                            </tr>
-                        <tbody>
-        
-                        </tbody>
-                    </table>
+            <div class="our-fac">
+                <h1 style="text-align: center;">Our Facilitations</h1>
+                <div class="facilitations">
+                    <div class="facilitation-item">
+                        <div class="circle" style="background-image: url('assets/content1.jpg');"></div>
+                        <h4>Professional<br>Teacher</h4>
+                    </div>
+                    <div class="facilitation-item">
+                        <div class="circle" style="background-image: url('assets/content2.jpg');"></div>
+                        <h4>Sport Field</h4>
+                    </div>
+                    <div class="facilitation-item">
+                        <div class="circle" style="background-image: url('assets/content3.jpg');"></div>
+                        <h4>Classroom</h4>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
+    <footer>
+        <div class="container">
+            <h1 style="text-align: center; padding-top: 30px;">Message Us</h1>
+            <div class="message-us" id="message-us">
+                <div class="form-section">
+                    <div class="message-container">
+                        <form class="message-form" name="message-form" onsubmit="return validateForm()">
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="nama">Nama</label>
+                                </div>
+                                <div class="col-75">
+                                    <input type="text" id="nama" name="nama" placeholder="Nama">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="ttl">Tanggal Lahir</label>
+                                </div>
+                                <div class="col-75">
+                                    <input type="date" id="ttl" name="ttl">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="kelamin">Jenis Kelamin</label>
+                                </div>
+                                <div class="col-75">
+                                    <input type="radio" id="laki" name="kelamin" value="Laki - laki">
+                                    <label for="laki">Laki - laki</label>
+                                    <input type="radio" id="perempuan" name="kelamin" value="Perempuan">
+                                    <label for="perempuan">Perempuan</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="pesan">Pesan</label>
+                                </div>
+                                <div class="col-75">
+                                    <textarea id="pesan" name="pesan" placeholder="Pesan..."
+                                        style="height:200px"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <button type="submit" id="submit">Kirim</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="show-section">
+                    <h3>Current time: <span id="show-date"></span></h3>
+                    <p>
+                        <b>Nama: </b><span id="show-nama"></span><br>
+                        <b>Tanggal Lahir: </b><span id="show-ttl"></span><br>
+                        <b>Jenis Kelamin: </b><span id="show-kelamin"></span><br>
+                        <b>Pesan: </b><span id="show-pesan"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="createdby">
+            <div class="container">
+                <p>Created by DimasB&copy;2023</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
+
 </html>

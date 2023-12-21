@@ -1,20 +1,28 @@
-let slideIndex = 1;
-showDivs(slideIndex);
+//form validation
+function validateForm(){
+    const nama = document.forms["message-form"]["nama"].value;
+    const ttl = document.forms["message-form"]["ttl"].value;
+    const kelamin = document.forms["message-form"]["kelamin"].value;
+    const pesan = document.forms["message-form"]["pesan"].value;
 
-function plusDivs(n){
-    showDivs((slideIndex += n));
+    if(nama == "" || ttl == "" || kelamin == "" || pesan == ""){
+        alert("Tidak boleh kosong");
+        return false
+    } else{
+        showData(nama, ttl, kelamin, pesan);
+        return false;
+    }
 }
 
-function showDivs(n){
-    let i;
-    let imgList = document.getElementsByClassName("img-slideshow");
-    
-    if(n>imgList.length) slideIndex = 1;
-    else if(n<1) slideIndex = imgList.length;
+//menampilkan data input
+function showData(nama, ttl, kelamin, pesan){
+    const date = new Date().toDateString();
 
-    for(i=0;i<imgList.length;i++){
-        imgList[i].style.display = "none";
-    }
-
-    imgList[slideIndex = 1].style.display = "block";
+    document.getElementById("guest-nama").innerHTML = nama;
+    document.getElementById("show-nama").innerHTML = nama;
+    document.getElementById("nama").placeholder = nama;
+    document.getElementById("show-ttl").innerHTML = ttl;
+    document.getElementById("show-kelamin").innerHTML = kelamin;
+    document.getElementById("show-pesan").innerHTML = pesan;
+    document.getElementById("show-date").innerHTML = date;
 }
